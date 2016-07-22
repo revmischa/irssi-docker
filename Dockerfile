@@ -17,4 +17,4 @@ RUN $SCRIPTS_PATH/setup.sh
 
 
 USER irssi
-CMD bash
+CMD irssi
