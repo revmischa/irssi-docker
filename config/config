@@ -1,13 +1,19 @@
 servers = (
   {
-    address = "2a00:1a28:1100:7::1337";
+    address = "irc.efnet.net";
     chatnet = "efnet";
-    port = "9999";
-    use_ssl = "yes";
     autoconnect = "no";
     ssl_verify = "no";
   },
   { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
+  {
+    address = "irc.gorf.chat";
+    chatnet = "gorf";
+    port = "6697";
+    use_ssl = "yes";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  },
   {
     address = "irc.freenode.net";
     chatnet = "freenode";
@@ -55,6 +61,7 @@ chatnets = {
   };
   oftc = { type = "IRC"; };
   jerkcity = { type = "IRC"; };
+  gorf = { type = "IRC"; };
 };
 
 channels = (
@@ -63,6 +70,7 @@ channels = (
   { name = "#stocks"; chatnet = "efnet"; autojoin = "no"; }
   { name = "#football"; chatnet = "efnet"; autojoin = "no"; }
   { name = "#penispump"; chatnet = "efnet"; autojoin = "yes"; }
+  { name = "#cutewrld"; chatnet = "gorf"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -99,8 +107,7 @@ aliases = {
   KB = "kickban";
   KN = "knockout";
   BANS = "ban";
-  hw = "window new; window go hilight; window move up; window size 5";
-  hellasay = "gay -1 $1; me $1; notice $0 $1; ctcp $0 $1; knock $0;";
+  enable_hilightwin = "window new; window go hilight; window move up; window size 5";
   qos = "quote operserv $*";
   floodline = "msg operserv oline $* +g";
   B = "ban";
@@ -120,6 +127,7 @@ aliases = {
   "MANUAL-WINDOWS" = "set use_status_window off;set autocreate_windows off;set autocreate_query_level none;set autoclose_windows off;set reuse_unused_windows on;save";
   EXEMPTLIST = "mode $C +e";
   ATAG = "WINDOW SERVER";
+  hellasay = "gay -1 $1; me $1; notice $0 $1; ctcp $0 $1; knock $0;";
 
   grids = "say $* \0034G.\003\0037R.\003\0038I.\003\0039D.\003\00312S. \003\00313\037/\\\\\017";
   lump = "say $* u dont even know me kid shut the fuck up hidin behind your computer i'd fuckin lump u out if you fronted on me like that in person";
@@ -352,7 +360,7 @@ settings = {
   };
   "irc/flood" = { flood_max_msgs = "0"; flood_timecheck = "0"; };
   "fe-common/core" = {
-    theme = "madcow";
+    theme = "jokx";
     completion_nicks_lowercase = "yes";
     term_charset = "utf-8";
     use_status_window = "yes";
@@ -376,10 +384,8 @@ settings = {
     dcc_autoaccept_lowports = "no";
   };
 };
-hilights = (
-);
-logs = {
-};
+hilights = ();
+logs = {};
 ignores = (
   {
     level = "JOINS PARTS QUITS MODES NICKS";
@@ -390,13 +396,9 @@ keyboard = ( { key = "meta-x"; id = "command"; data = "window last"; } );
 windows = {
   1 = { 
     immortal = "yes";
-    name = "(status)";
+    name = ":D";
     level = "ALL";
     sticky = "yes";
   };
-  2 = { name = "hilight"; sticky = "yes"; };
 };
-mainwindows = {
-  1 = { first_line = "6"; lines = "45"; };
-  36 = { first_line = "1"; lines = "5"; };
-};
+

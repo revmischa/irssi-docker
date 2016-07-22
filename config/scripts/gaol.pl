@@ -5,17 +5,16 @@ use vars qw($VERSION %IRSSI);
 use Irssi;
 use Irssi::Irc;
 
-  use Email::Sender::Simple qw(sendmail);
-  use Email::Simple;
-  use Email::Simple::Creator;
+use Email::Sender::Simple qw(sendmail);
+use Email::Simple;
+use Email::Simple::Creator;
 
 my $email = 'CHANGEME@CHANGEME.FOO';
 
 
 $VERSION = '1.00';
 %IRSSI = (
-          authors     => 'jenk',
-          contact     => 'jenk',
+          authors     => 'canada420',
           name        => 'gaol',
           description => qq {
               Send an email when a private message is received for users that are in jail

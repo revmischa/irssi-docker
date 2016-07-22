@@ -9,7 +9,7 @@ aol.pl             chanshare.pl  fuckyou.pl     keepnick.pl       mkick.pl      
 autorejoin.pl      clones.pl     gay.pl         killreconnect.pl  usercount.pl
 bmi.pl             dau.pl        hilightwin.pl  massgline.pl      splitlong.pl
 ```
-* a vast collection of ANSI and ASCII art, many of it highly artistic and offensive
+* 225MB collection of ANSI and ASCII art, many of it highly artistic and offensive
 * copypasta aliases
 * advanced window layout, highlight window, multiline channel list
 * oper/superadmin/services aliases
@@ -33,8 +33,12 @@ You can "drop" an ANSI or ASCII file with the irssi alias `/drop foo.txt`
 * `/troll`
 * `/lumpall person`
 * `/gay -1 -fig -font script Hello!`
+* `/drop prions`
 * `/drop lemon.txt`
+* `/drop nice`
 * `/glinestreet wkr4k4r`
+* `/drop bigmatix`
+* `/enable_hilightwin`
 
 # How do I build it?
 If you have docker installed a simple `make` should do the trick.  You can easily see all of the steps performed and the software that's installed by looking at the Makefile, Dockerfile and the `build_irssi.sh` script.  
