@@ -18,8 +18,9 @@ bmi.pl             dau.pl        hilightwin.pl  massgline.pl      splitlong.pl
 * NO SLOWFLOODS (except efnet)
 
 # How do I run it?
+Run it with: `docker run -ti revmischa/irssi`  
 To get docker for any platform simply download it at https://www.docker.com/products/docker  
-Run it with: `docker run -ti revmischa/irssi`.  
+  
 This is a docker image, ready to run on any system, be it Mac, Windows or Linux. It can also be deployed to hosting services such as AWS EC2 Container Service, DigitalOcean or any other Docker-ready provider.  
 N.B. one could very easily script the creation of irssi images with your hosting provider of choice, giving you a fresh IRC client on a new IP address with a keyboard stroke, if one were so inclined. Never stay banned again!  
 
