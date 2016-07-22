@@ -3,18 +3,18 @@ A carefully curated collection of irssi aliases, handy scripts, aliases and a va
 This is the last word in IRC clients.  
 
 # What's included?
-* ```
+```
 adv_windowlist.pl  cflood.pl     figlet.pl      hueg.pl           masskb.pl     timer.pl
 aol.pl             chanshare.pl  fuckyou.pl     keepnick.pl       mkick.pl      trolldb.pl
 autorejoin.pl      clones.pl     gay.pl         killreconnect.pl  usercount.pl
 bmi.pl             dau.pl        hilightwin.pl  massgline.pl      splitlong.pl
 ```
-* madcow.theme
 * a vast collection of ANSI and ASCII art, many of it highly artistic and offensive
 * copypasta aliases
 * advanced window layout, highlight window, multiline channel list
 * oper/superadmin/services aliases
 * [256color](http://www.robmeerman.co.uk/unix/256colours) support (!)
+* madcow.theme
 * NO SLOWFLOODS (except efnet)
 
 # How do I run it?
