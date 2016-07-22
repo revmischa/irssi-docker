@@ -29,3 +29,9 @@ You can "drop" an ANSI or ASCII file with the irssi alias `/drop foo.txt`.
 
 # How do I build it?
 If you have docker installed a simple `make` should do the trick.  You can easily see all of the steps performed and the software that's installed by looking at the Makefile, Dockerfile and the `build_irssi.sh` script.  
+### Building from source:
+```
+git clone https://github.com/revmischa/irssi-docker.git
+cd irssi-docker
+make run  # builds docker image and launches irssi
+```
