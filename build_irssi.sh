@@ -9,5 +9,7 @@ wget https://github.com/irssi/irssi/releases/download/$IRSSI_RELEASE/irssi-${IRS
 tar -zxf irssi-${IRSSI_RELEASE}.tar.gz
 cd irssi-${IRSSI_RELEASE}
 ./configure --enable-true-color && make -j7 && make install
+apt-get remove -y gcc build-essential
+apt-get autoremove -y
 useradd -m irssi
 

@@ -3,6 +3,9 @@
 build:
 	docker build --tag revmischa/irssi .
 
+build-clean:
+	docker build --no-cache --tag revmischa/irssi .
+
 run: build
 	docker run -ti revmischa/irssi
 
