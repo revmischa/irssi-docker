@@ -48,3 +48,5 @@ git clone https://github.com/revmischa/irssi-docker.git
 cd irssi-docker
 make run  # builds docker image and launches irssi
 ```
+# Screenshot
+![Screenshot](screenshot.png)
