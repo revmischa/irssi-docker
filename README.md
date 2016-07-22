@@ -26,7 +26,15 @@ N.B. one could very easily script the creation of irssi images with your hosting
 
 # Where da ANSIs?
 [ANSI and ASCII art](art) is in the `art/` directory. It's not very organized, sorry. This is a directory full of lots of random artwork by chatters that has been collected over the years. Some of it is shockingly offensive and I don't recommend pasting them at random unless you like getting banned for life and shunned from your social circles IRL.  
-You can "drop" an ANSI or ASCII file with the irssi alias `/drop foo.txt`.
+You can "drop" an ANSI or ASCII file with the irssi alias `/drop foo.txt`
+
+# Test drive
+* `/connect irc.efnet.net`
+* `/troll`
+* `/lumpall person`
+* `/gay -1 -fig -font script Hello!`
+* `/drop lemon.txt`
+* `/glinestreet wkr4k4r`
 
 # How do I build it?
 If you have docker installed a simple `make` should do the trick.  You can easily see all of the steps performed and the software that's installed by looking at the Makefile, Dockerfile and the `build_irssi.sh` script.  
