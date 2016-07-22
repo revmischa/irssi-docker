@@ -1,0 +1,402 @@
+servers = (
+  {
+    address = "2a00:1a28:1100:7::1337";
+    chatnet = "efnet";
+    port = "9999";
+    use_ssl = "yes";
+    autoconnect = "no";
+    ssl_verify = "no";
+  },
+  { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
+  {
+    address = "irc.freenode.net";
+    chatnet = "freenode";
+    port = "6667";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "no";
+  },
+  {
+    address = "irc.oftc.net";
+    chatnet = "oftc";
+    port = "6667";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "no";
+  },
+  {
+    address = "jcmc.jerkcity.com";
+    chatnet = "jerkcity";
+    port = "6667";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "no";
+  }
+);
+
+chatnets = {
+  Undernet = {
+    type = "IRC";
+    max_kicks = "1";
+    max_msgs = "3";
+    max_whois = "30";
+  };
+  DALnet = {
+    type = "IRC";
+    max_kicks = "4";
+    max_msgs = "3";
+    max_whois = "30";
+  };
+
+  efnet = { 
+    type = "IRC";
+    cmdmax = "3000";
+    cmdspeed = "1";
+  };
+  oftc = { type = "IRC"; };
+  jerkcity = { type = "IRC"; };
+};
+
+channels = (
+  { name = "#jerkcity"; chatnet = "jerkcity"; autojoin = "yes"; }
+  { name = "#depression"; chatnet = "efnet"; autojoin = "yes"; }
+  { name = "#stocks"; chatnet = "efnet"; autojoin = "no"; }
+  { name = "#football"; chatnet = "efnet"; autojoin = "no"; }
+  { name = "#penispump"; chatnet = "efnet"; autojoin = "yes"; }
+);
+
+aliases = {
+  drop = "exec -o cat -u /home/irssi/art/$*; sleep 1";
+  pump = "exec -o cat /home/irssi/art/pump/$* ; sleep 1";
+  plop = "quote sapart $0 $1 Redirecting $0 to $2 ; quote sajoin $0 $2; sleep 1 ; /mode $2 -o $0";
+  sajoin = "quote sajoin $*";
+  g = "gay -1 -fig -box $*";
+  wc = "window close";
+  os = "q operserv";
+  sa = "os set superadmin on";
+  J = "join";
+  WJOIN = "join -window";
+  WQUERY = "query -window";
+  LEAVE = "part";
+  BYE = "quit";
+  EXIT = "quit";
+  SIGNOFF = "quit";
+  DESCRIBE = "action";
+  DATE = "time";
+  HOST = "userhost";
+  LAST = "lastlog";
+  SAY = "msg *";
+  WI = "whois";
+  WII = "whois $0 $0";
+  WW = "whowas";
+  W = "who";
+  N = "names";
+  M = "msg";
+  T = "topic";
+  C = "clear";
+  CL = "clear";
+  K = "kick";
+  KB = "kickban";
+  KN = "knockout";
+  BANS = "ban";
+  hw = "window new; window go hilight; window move up; window size 5";
+  hellasay = "gay -1 $1; me $1; notice $0 $1; ctcp $0 $1; knock $0;";
+  qos = "quote operserv $*";
+  floodline = "msg operserv oline $* +g";
+  B = "ban";
+  MUB = "unban *";
+  UB = "unban";
+  SB = "scrollback";
+  WN = "window new hide";
+  SV = "say Irssi $J ($V) - http://irssi.org/";
+  GOTO = "sb goto";
+  CHAT = "dcc chat";
+  RUN = "SCRIPT LOAD";
+  UPTIME = "eval exec - expr `date +%s` - \\$F | awk '{print \"Irssi uptime: \"int(\\\\\\$1/3600/24)\"d \"int(\\\\\\$1/3600%24)\"h \"int(\\\\\\$1/60%60)\"m \"int(\\\\\\$1%60)\"s\" }'";
+  SBAR = "STATUSBAR";
+  INVITELIST = "mode $C +I";
+  Q = "QUERY";
+  CALC = "exec - if which bc &>/dev/null\\; then echo '$*' | bc | awk '{print \"$*=\"$$1}'\\; else echo bc was not found\\; fi";
+  "MANUAL-WINDOWS" = "set use_status_window off;set autocreate_windows off;set autocreate_query_level none;set autoclose_windows off;set reuse_unused_windows on;save";
+  EXEMPTLIST = "mode $C +e";
+  ATAG = "WINDOW SERVER";
+
+  grids = "say $* \0034G.\003\0037R.\003\0038I.\003\0039D.\003\00312S. \003\00313\037/\\\\\017";
+  lump = "say $* u dont even know me kid shut the fuck up hidin behind your computer i'd fuckin lump u out if you fronted on me like that in person";
+  ddos = "say You are about to lose your CPU, you hard drive, your router, and a good part of your mother board.";
+  ossmove = "say if you are unsatisfied with the level of service provided on freenode you are welcome to move your open source development discussions to another network. i would be happy to recommend some";
+  trolling = "say trolling is a coping mechanism used by self hating chatters to attempt to cause as much external misery as they feel inside";
+  rules2 = "say Channel rules: Do not use too much profanity or sex talk. Lets try to keep things tasteful. Don't harass anyone in the channel (ping attacks, floods, pms, etc) Don't spam advertisements in the channel (links, ads, other stations/streams). Failure to comply may result in a kick/ban.";
+  script1 = "say I swear $*. I don't want to see your dick. you're wide arsenal of scripts made by a 12 year old are fairly annoying.";
+  urgay = "quote stats U; quote stats R; quote stats G; quote stats A; quote stats Y;";
+  sunlight = "say hey $0, step outside the front door and take a breath of fresh air. if you're brave, feel free to step outside into the sunlight. it won't burn you instantly, but a couple minutes in the outdoors might calm your hateful anger lashouts.";
+  trollirssi = "say I don't like the term troll because it's quite ambiguous and often used as ad hominem, or however you spell that, because I don't have a spell checker installed on my IRC client, which is irssi.";
+  ignore4 = "say for that arrogant and selfish re-post you have earned a place on my ignore list (DCC, CTCP, INVI, PRIV and MSG)";
+  ignore2 = "say $*: I have put you on a permanent ignore, public and private. I have found you disturbing, rude and generally not worth talking to. According to the channels you hang on, it strengtens the effect of wanting to put you on ignore because of my lack of interest in you as a person. This message is not meant to be rude to you, just to inform you that i won't see anything of what you type from now on.";
+  ignore3 = "say Congratulations, $*, you've just made my ignore list. Was it worth it to you to make your \"witty\" comments and snide in-jokes to your irc pals about me if it meant you are now disappeared from my online experience? Have a nice life";
+  linux = "say why dont you linux users just shove all this open source bullshit up your own ass. no one cares about compiling or configuring or any of the bullshit you constantly jack off about. we normal people just care about chatting and sending email to our friends and viewing the www so please shut the fuck up about foxfire or whatever the fuck tangent you're going off on. thanks for reading this.";
+  chill = "say $* is the cool place to hang out. You can find most of the cool people there. In $* you can just chill and do whatever and totally relax. \"Take it easy\" is the $* motto, for example, that's how laid back it is there. Show up if you want to have a good time. Another good reason to show up is if you want to hang out with friends.";
+  itsecurity = "say i haven't gone 1 day without smoking a joint in nearly 4 years, and i'm in IT security... The way I look at it, if it doesn't adversely affect my job performance, its no worse than alcohol. Though I have 2 hardfast rules about smokin' herbs... 1) Never before work 2) never before sundown :)";
+  cyberbullying = "say Don't forget that even though you can't see a cyberbully or the bully's victim, cyberbullying causes real problems. If you wouldn't say it in person, don't say it online. Delete cyberbullying. Don't write it. Don't forward it.";
+  lurk = "say No 'lurking' in the channel. If you are not a $* @OP, please do not leave your nick 'parked' in the channel if you plan on being away from your computer for more than 1 hour. People would like to chat with you, not stare at your vacant nick. Unresponsive nicks will be removed from the channel. Continually ignoring this request will result in a channel ban. This is a chat room, not a bus station!";
+  alert = "say \037\0034/\0039!\0034\\\\\017\037 $* \037\0034/\0039!\0034\\\\\017\037";
+  lump2 = "say $* fuckin cunt you listen to what I say and when the fuck I say dont ever fuckin diss me you dont even know who the fuck your dealing with ";
+  hulkm = "say rage-meter for \002$*\002\037:\037 \00314[\0039||||||||||||||\00314]   \002\037\0039HULKIN'";
+  juggalo = "say your a little bitch..all you do is sit at home on ya comp looking for free homosexual website...................come to arizona mother fucker.the desert juggalos will be waitin.hows bout you o to every state and walk up to some real juggalo killas and tell em to they face icp sucks..then we see whos tough....your talking hit through a fucin creen......HA HA HA HA HA pussy";
+  ragem = "say rage-meter for \002$*\002\037:\037 \00314[\0039||\0033||\0038||\0037||\0035||\0034||||\00314]   \002\037\0034HARD RAGE";
+  audit = "say AUDIT: \002$*\002\037:\037 \00314[\0039||||||||||||||\00314]   \002\037\0039COMPLETE";
+  ragem2 = "say \0030,1 $* MADNESS LEVEL [                \0030,1 ] what the fuck? CALM AND PEACEFUL;say \0030,1 $* MADNESS LEVEL [\0039===-            \0030,1 ] RELAXED;say \0030,1 $* MADNESS LEVEL [\0039====\0038===-        \0030,1 ] NOT SO ANGRY;say \0030,1 $* MADNESS LEVEL [\0039====\0038====\0037===-    \0030,1 ] ANGRY AT YOU LOLF;say \0030,1 $* MADNESS LEVEL [\0039====\0038====\0037====\0034===--\0030,1]\0034-OFF DA SCALE LOL (buffar overrun)";
+  lump3 = "say $*: You gonna threaten me to my face? Let's play this? an eye for an eye game. Bring it, you supid crackwhore. In fact, I can't wait to rape and kill you in the back alley and dump your body into the fucking filthy sewer for the devourment of rats, a species in the higher level than your parasitic existence you useless piece of fucking shit.";
+  kiddie = "say $* nobody on this IRC is amused by your stupid little antics and constantly tricking people with your kiddie vhosts and name stealing ok if you keep pulling  this bullshit youre headed straight to gzline street";
+  lump4 = "say $*, hey dont no wat the fuck im gonna do 2 u fuck if i ever meet u im gonna fucking pound you fuck man if u was u id be soo scared man you should just change schools bcuz on monday im ognna kill u man just run away man just get out of here faggot";
+  shitty = "say god damnit why the fuck are you fuckers so fucking stupid as fuck? this place is shitty and you all should fucking kill yourselves like that faggot tourettes guy did. god oh god why in the fuck is this place still around and why the fuck do you fucking fucks keep putting me on faggot patrol holy fucking shit this is ridiculous i swear i fucking hate you all and you should die. gtfo.";
+  lumpall = "lump; lump2; lump3; lump4;";
+  panis = "say \0030,2my panis do not up and i have a problem with my penny balls";
+  butt = "say My cock stayed hard after coming from his fist slamming my prostrate with each punch, the onslaught continued. He slide his fist back in elbow deep and with the other hand untied my restraints. 'Now turn over on your back with my fist in your ass and then raise your legs high above your head so your cunts fully exposed' I flipped over feeling that massive arm rotating in my ass, almost making me cream again. I held my ass up high for him as he held my leg with the other arm and the fisting started again. I looked down to watch deep long fisting stokes, my asshole complaining with gurgling and sucking sounds as he pummeled my asshole.. My balls were tied of tight as I began to jack my cock 'Go deep, really ruin it master!' He pulled out, wiped his hands clean and untied my balls. 'Hit the showers, slutboy! Your asshole is totally wasted' I could feel huge lips flapping between my cheeks, afraid to see what he has done, I know I never shit right for a awhile.";
+  warning = "say Hey im just here to tell u im from cali and i dont pull that shit about askin what u claim but if someone asks me and this is a fare warning cuz im not bullshitin or n ething like that ok if n e one asks me what i claim besides East side and shit like that im gonna staright up clock ur ass off the heezy like a mutha fucka ok u wont know what the fuck hit u until u regain concisioness";
+  fat = "say Oh u FUCkIn RaCISt BItCh Dont b TalkIn To mA Kuzin LIKE DAt. u FUCkIN TRiFoLIn IrISh diCK SUCkER...~N~ 1st of all i dont Why u tALkIn ABOut pEopLe WHen UR Azz Iz ugLy Azz FUCk..1st U NeeD 2 b CheckIn ur Self den Talk BOut PeopLe..! Dont hate Juz BEcause oTha PEOple COuld Eat MOre Than u Can n not get F-A-T .. n because people are Prettier dan U..!";
+  transformers = "say mother fucker i have been in this channel for years and have been collecting transformers for 15+ years";
+  irl = "say I can't believe you fucking morons waste your life here. Listen, this is your LIFE. You need to be living with real human beings. You need to go find a girlfriend and spend time with her. You need to find happiness. Happiness is not in your online games or crappy manga books, it is in other people.";
+  goof = "say don't like your shell too much eh goof watch what 5000 bots do to it hahahahaha see ya goof";
+  halo = "say 360 best console in world, bill gates is hero of american people, wireless controllers cause brain cancer in lab rats but lab rats cant enjoy HD graphics so fuck them anyway, praise microsoft for gaming achievment halo 3";
+  theman = "say So your the Man behind the crap are you. Well Well. One on one now. NOw the fun really begins. You can report my channels as much as you like I will keep on bouncing back. I am not like the other wasters that you have abused. I never give up, forgive or forget.";
+  halo2 = "say Its just a sword, turn your xbox off, take a shower, put on some nice clothes and then go outside and find yourself a nice lady who will lend you access to her vagina on a semi-regular basis you fucking nerd.";
+  halo3 = "say I swear I'll personally kick someone in the teeth for disliking this video bungie deserves major major credit for all the﻿ halos and I bought halo reach legendary edition just because it was bungies last stand on halo so I had to get it and this is how I will end my comment and my life has been given to halo and I will giv my life for halo so bungie you will always be the best";
+  rules = "say Not following the chat room rules will at the least get you a reprimand or, at the worst, kicked or removed from the chat room. The Operators are here to assist and make sure the chat room is a fun and friendly place to visit. Channel Operators are not guards, but they take their jobs seriously. In the event of unacceptable or disruptive behavior, you will be asked to leave the room.";
+  finally = "say Look $*, I fucking card servers, shells, ddos shit every day, hack into palin's email account. the day the feds come to my door, first words out of my mouth: finally";
+  pp4l = "say * Penis Pump (PP4L) (trolls various IRC networks, mainly EFnet. Common targets include #computers, #lebanon, #php, #politics, #science, #math, #scientology, #irchelp, #christian , #freebsdhelp , #bible , #islam , #microsoft. Myspace users have also reported being harassed by Penis Pump. The callsign PP4L stands for Penis Pump 4 Life, since its members are unusually dedicated to their cause. Furthermore, PP members can be identified by the catchphrase YA WE PUMPIN";
+  toughguy = "say i couldn't understand all that copypasta, now i just want to see a hormonal teenager make internet tough guy moves";
+  athelone = "say During the time that I was not here, I was on the internet looking at what people referred to as \"trolling\" and different methods of it. Their concept of trolling was vastly different from Weev's  concept. So I have to ask - which is the right one?";
+  brucel = "say what's the point? it's not like you're gonna make me unhappy. got a million dollar house, an 80k car, a nice college degree, six figure job. that's why you pick on me. cuz you have none of that lol. hater.  ok bbl gotta eat my gyro. go \"pick\" on someone lol. as long as it keeps you from crying. have fun k?  bbl";
+  cockass = "say There's no better way to wake up in the morning than with my lovers cock inside of me. Usually he takes me from behind. This is my favorite position because I can lie there pretending I'm sleeping while he slides himself in and out of me. I let him think he's being so clever, getting off without me knowing it. Fat chance! But I let him think he's getting away with something anyway. After he's worked himself up a but, I put my finger in my mouth for a little lubrication, then I sneak it down between my legs and rub my ass until I'm so excited that I have to pretend that I have just woken up. my ass is getting too juicy and my body is starting to move with his, so I stir and stretch and yawn and give a little hint of surprise and annoyance, just so he doesn't take me for granted. I tell him to stop and let me sleep. Believing he can change my mind he continues to grind me, but I don't want to come yet, so I pull away from him and he lies there pouting like a sullen child, frustrated and hard. I turn around and kiss him sweetly and say, \"maybe later,\" and pretend to drift off to sleep. When I'm sure he thinks I'm a rotten partner I climb on top of him and slide his dick, which is always hard (thank God), inside of me. I don't mind continuing this scenario in the drivers seat. This is the best way for a boy to get fucked without any digital manipulation, 'cause you can move your ass any way you want. You can take his cock deep or shallow and you can be sure your inside is getting worked good 'cause you're guiding your own weight on top of him. It's so easy for me to come this way and it's only a matter of seconds before I do. I watch my come gush out of me and I wet my fingers in it and rub his nipples that are so hard I could break them. He tells me he wants to come and I say, \"wait for me, baby.\" So he slaps my breasts which I love almost as much as when he slaps my ass. Not too hard but hard enough to sting. Like a cat in heat I drag my ass on that beautiful piece of flesh just above his dick. I am painting him with my hole, mastering the art of fucking. He grabs on to my ass like he's working a jack hammer. Digging his fingers into my flesh, moving my body on his cock faster and faster. He says, \"I'm gonna come, baby. I can't hold it any longer!\" I love that helpless sound in his voice. I tell him not to close his eyes when he comes. I want to look in them. I want to see the moment of surrender when he loses control. When he gives in to me. Finally I'm ready. I let his train go riding through me. Tearing up the inside of my ass, fucking me good and hard. We come together waking up the neighborhood. I fall on top of him drained and drift back into sleep, and I dream that my lover's cock is inside of me, and he's taking me from behind sliding himself in and out of me...";
+  law = "say Actually dumbass my father was a lawyer. I actually have a pretty good idea of how the law works, plus the fact my dad was actually a lawyer in Florida I know they have strict ass laws. Oh and you didn't hear ? Now its a misdemeanor with up to a 100,000 dollar fine. Now who doesn't know the law hot shot ?";
+  job = "say One day you're going to lose your job (assuming you ever fucking get one, you pathetic piece of shit) because you said \"faggot\" or the n-word and you're going to get sued and spend the rest of your goddamn life paying it off. And when you tried to find a new job (assuming you don't just move back into your mom's basement, you pathetic piece of shit), when they ask your old boss why they fired you, he'll say \"Because he was a racist and homophobic shit-bag\" and they'll say \"Okay, we won't hire him them.\"";
+  hackers = "say hackers shmackers.  when it comes to fists, I just deprive them of their internet service at the source.  all it usually takes is a phonecall and a threat that if they dont can the guy, we'll blackhole their bullshit shell account operation AND their upstream provider if they don't knock the shit off.";
+  floods = "say cant take floods dont give floods its simple you little pussies, dibber dobbers, its ok but if they can trace me via my proxy chain good luck and then if they do they cant come here haha";
+  blogit = "say Hi $*! You appear to be raging and hulkin' on IRC. Would you like to: [Suppress your Anger] [Emoquit IRC Forever] [Live in Denial] [Blog to your Pals] [Switch to MSN] [Ban] [Quit Caring] [Eat Blogzap] [Die] [Commit suicide because nobody cares]";
+  ifw = "say okay anyways $* I don't know where you get off claiming to know irc when you have more permissions than I do on this network. if I had your access I'd be able to make the same retarded scripts you do.";
+  addict = "say God forbid you get addicted to cleaning up your life, getting an education, a decent job, staying away from sluts, and stop being a burden to your parents";
+  toast = "say Scott Cahoon; say You are 14; say Shut up; kick toast";
+  math = "say Let's play code you can be math.h and I can suck your big queer dick then I can be strcmp and you can compare my balls then together we can plot curves in some sort of stack based language. Seriously there's hay in my pants";
+  cheapthrills = "say you're a grown ass man getting cheap thrills on irc";
+  glinestreet = "say $* nobody on this IRC is amused by your stupid little antics and constantly tricking people with your kiddie vhosts and name stealing ok if you keep pulling this bullshit youre headed straight to gzline street";
+  anguish = "say My head is hurting, my right eye feels like it's going to pop like a mosquito drinking from an expresso addict with high blood pressure, I want to crawl somewhere damp and dark and quiet and I consider never to touch a keyboard again.";
+  danny = "say yo, are dudes i ignore on irc such sad sacks that they hunt me on the forums to reply to my shit? what kind of sad dude do you have to be? yo, im gonna pray for these guys. im an atheist, but something has to be done. 'please lord, give them something to live for'";
+  wkrdonate = "say Noah Biorkman is a 5yr old boy who is in his last stages of neuroblastoma cancer after a 2 1/2 year battle. His family is celebrating Christmas this week and all he wants are Christmas cards. Lets try and see how many we can get to him from all over the world! His address is Noah Biorkman 8408 Lucerne Dr Chagrin Falls, OH 44023";
+  stopit = "say stop it or i'm 1.) telling an oper 2.) calling your isp and having you disabled for abuse. dont think im all talk because ive done this before to assholes like u and now those ppl dont have internet so stop while u still can";
+  stupid = "say I'll just point out here, if you really want to call someone else stupid, repeating the same five vocab just looks like you are the idiot, if you don't know, the interwebz has a thesuarus, use a little effort.";
+  talkpiss = "say u know wtf is so funny about $* he loves talk about something he knows fuckall about this is why he is called mr talkpiss moahahaha";
+  up = "script exec use Encode\\; Irssi::active_win->command(\"say \" . encode_utf8(qq{\\\\x{2191}}) )";
+  interrobang = "script exec use Encode\\; Irssi::active_win->command(\"say \" . encode_utf8(qq{\\\\x{203D}}) )";
+  boring = "say well, nothing interesting here. I thought I would see stories and what not like everyone said, but so far nothing interesting enough to warrant my stay here. it's just join part join part spam repost of same stuff. Au revoir.";
+  bully = "say $0: I feel offended by your recent action(s). Please read http://stop-irc-bullying.eu/stop";
+};
+
+
+statusbar = {
+  # formats:
+  # when using {templates}, the template is shown only if it's argument isn't
+  # empty unless no argument is given. for example {sb} is printed always,
+  # but {sb $T} is printed only if $T isn't empty. '
+
+  items = {
+    # start/end text in statusbars
+    barstart = "{sbstart}";
+    barend = "{sbend}";
+
+    topicbarstart = "$C: \"{topicsbstart}";
+    topicbarend = "{topicsbend}\"%n   %9%G$chatnet:%U$R%n $H %B$E";
+
+    # treated "normally", you could change the time/user name to whatever
+    time = "%m$,%n|%g$:%n|%r$;%n";
+    user = "{sb {sbnickmode $cumode}%y$N%n{sbmode $usermode}{sbaway $A}}";
+
+    # treated specially .. window is printed with non-empty windows,
+    # window_empty is printed with empty windows
+    window = "{sb $winref:$itemname{sbmode $M}}";
+    window_empty = "{sb $winref{sbservertag $tag}}";
+    prompt = "%R%G$S%b{sb %Y%U$[.15]itemname}]%n";
+    prompt_empty = "{prompt $winname}";
+    topic = "$topic";
+    topic_empty = " v$J - TROLL EDITION";
+
+    # all of these treated specially, they're only displayed when needed  '
+    lag = "{sb Lag: $0-}";
+    act = "{sb Act: $0-}";
+    more = "-- more --";
+  };
+
+  # there's two type of statusbars. root statusbars are either at the top
+  # of the screen or at the bottom of the screen. window statusbars are at
+  # the top/bottom of each split window in screen.
+  default = {
+    # the "default statusbar" to be displayed at the bottom of the window.
+    # contains all the normal items.
+    window = {
+      disabled = "no";
+
+      # window, root
+      type = "window";
+      # top, bottom
+      placement = "bottom";
+      # number
+      position = "1";
+      # active, inactive, always
+      visible = "active";
+
+      # list of items in statusbar in the display order
+      items = {
+        barstart = { priority = "100"; };
+        time = { };
+        user = { };
+        window = { };
+        window_empty = { };
+        lag = { priority = "-1"; };
+        act = { priority = "10"; };
+        more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+        nact = { };
+        usercount = { };
+        otr = { };
+      };
+    };
+
+    # statusbar to use in inactive split windows
+    window_inact = {
+      type = "window";
+      placement = "bottom";
+      position = "1";
+      visible = "inactive";
+      items = {
+        barstart = { priority = "100"; };
+        window = { };
+        window_empty = { };
+        more = { priority = "-1"; alignment = "right"; };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+
+    # we treat input line as yet another statusbar :) It's possible to
+    # add other items before or after the input line item.
+    prompt = {
+      type = "root";
+      placement = "bottom";
+      # we want to be at the bottom always
+      position = "100";
+      visible = "always";
+      items = {
+        prompt = { priority = "-1"; };
+        prompt_empty = { priority = "-1"; };
+        # treated specially, this is the real input line.
+        input = { priority = "10"; };
+      };
+    };
+
+    # topicbar
+    topic = {
+      type = "root";
+      placement = "top";
+      position = "1";
+      visible = "always";
+      items = {
+        topicbarstart = { priority = "100"; };
+        topic = { };
+        topic_empty = { };
+        topicbarend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_0 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_0 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+    awl_1 = {
+      items = {
+        barstart = { priority = "100"; };
+        awl_1 = { };
+        barend = { priority = "100"; alignment = "right"; };
+      };
+    };
+  };
+};
+settings = {
+  core = {
+    real_name = "n00b";
+    user_name = "n00b";
+    nick = "n00ber";
+    chanmode_expando_strip = "no";
+    server_reconnect_time = "10";
+  };
+  "perl/core/scripts" = {
+    rainbow_keepstate = "yes";
+    rainbow_offset = "20";
+    figfont = "standard";
+    nact_devices = "eth0";
+    awl_maxlines = "2";
+    awl_display_key = "$H$C$S";
+    awl_columns = "1";
+    masskick_default_reason = "Yes hello";
+    masskick_default_use_6method = "yes";
+    256colors_enabled = "yes";
+  };
+  "irc/core" = {
+    cmd_queue_speed = "0";
+    cmds_max_at_once = "0";
+    ctcp_userinfo_reply = "im a looser";
+    ctcp_version_reply = "Microsoft Comic Chat 2.41";
+    ban_type = "custom host";
+    alternate_nick = "n0000b";
+    channels_rejoin_unavailable = "yes";
+  };
+  "irc/flood" = { flood_max_msgs = "0"; flood_timecheck = "0"; };
+  "fe-common/core" = {
+    theme = "madcow";
+    completion_nicks_lowercase = "yes";
+    term_charset = "utf-8";
+    use_status_window = "yes";
+    use_msgs_window = "no";
+    hilight_nick_matches = "yes";
+    show_nickmode_empty = "no";
+    hilight_level = "MSGS DCCMSGS PUBLIC";
+    activity_hilight_level = "MSGS DCCMSGS ";
+    bell_beeps = "yes";
+    beep_msg_level = "MSGS HILIGHT";
+  };
+  "fe-text" = {
+    paste_detect_time = "0";
+    actlist_sort = "refnum";
+    mirc_blink_fix = "yes";
+    scrollback_lines = "2000";
+  };
+  "irc/dcc" = {
+    dcc_port = "35000 40000";
+    dcc_autoget = "no";
+    dcc_autoaccept_lowports = "no";
+  };
+};
+hilights = (
+);
+logs = {
+};
+ignores = (
+  {
+    level = "JOINS PARTS QUITS MODES NICKS";
+    channels = ( "&bitlbee" );
+  }
+);
+keyboard = ( { key = "meta-x"; id = "command"; data = "window last"; } );
+windows = {
+  1 = { 
+    immortal = "yes";
+    name = "(status)";
+    level = "ALL";
+    sticky = "yes";
+  };
+  2 = { name = "hilight"; sticky = "yes"; };
+};
+mainwindows = {
+  1 = { first_line = "6"; lines = "45"; };
+  36 = { first_line = "1"; lines = "5"; };
+};
