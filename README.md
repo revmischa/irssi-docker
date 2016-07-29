@@ -2,6 +2,10 @@
 A carefully curated collection of irssi aliases, handy scripts, aliases and a vast collection of ANSI and ASCII art suitable for IRC.  
 This is the last word in IRC clients.  
 
+### Demo:
+[![Demo](https://img.youtube.com/vi/e3Pk30O0mPw/0.jpg)](https://www.youtube.com/watch?v=e3Pk30O0mPw)
+
+
 # What's included?
 ```
 adv_windowlist.pl  cflood.pl     figlet.pl      hueg.pl           masskb.pl     timer.pl
@@ -33,11 +37,12 @@ You can "drop" an ANSI or ASCII file with the irssi alias `/drop foo.txt`
 * `/troll`
 * `/lumpall person`
 * `/gay -1 -fig -font script Hello!`
+* `/hueg Hello!`
 * `/drop prions`
 * `/drop lemon.txt`
 * `/drop nice`
 * `/glinestreet wkr4k4r`
-* `/drop bigmatix`
+* `/drop bigmatix.txt`
 * `/enable_hilightwin`
 
 # How do I build it?
