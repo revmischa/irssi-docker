@@ -1,31 +1,29 @@
-use Irssi;
-use Irssi::Irc;
-
+#!/bin/perl
+ 
+ 
 use strict;
-use warnings;
-
-use LWP::Simple;
-
-use vars qw($VERSION %IRSSI); $VERSION = "1.0";
-
+use Irssi;
+use LWP::UserAgent;
+use vars qw($VERSION %IRSSI);
+ 
+$VERSION= '1.0';
 %IRSSI = (
-          authors => "canada420",
-          name => "autotroll",
-          description => "/troll",
-          license => "BPL",
-          url => "http://www.buttes.org/",
+        authors => 'munki',
+        contact => 'thatfunkymunki@gmail.com',
+        name => 'trolldb',
+        description => 'trolls people from trolldb',
+        license => 'BSD',
+        url => 'none',
+        changed => '08-22-2011 0325'
 );
-
-Irssi::command_bind('troll', 'cmd_troll');
-
-sub cmd_troll {
-    my ($data, $server, $dest) = @_;
-    my $win = Irssi::active_win();
-
-    return unless $dest;
-
-    my $line = LWP::Simple::get(q!http://rolloffle.churchburning.org/troll_me_text.php!);
-    my $cmd = "say ";
-
-    $dest->command("$cmd$line");
+ 
+sub query {
+        my ($data, $server, $witem) = @_;
+        my $ua = LWP::UserAgent->new;
+        $ua->agent("irssi/0.1");
+        my $request = HTTP::Request->new(GET => "http://rolloffle.churchburning.org/troll_me_text.php");
+        my $result = $ua->request($request);
+        my $content = $result->content;
+         
+        $witem->command("SAY $content");
 }
