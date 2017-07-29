@@ -74,8 +74,8 @@ channels = (
 );
 
 aliases = {
-  drop = "exec -o cat -u /home/irssi/art/$*; sleep 1";
-  pump = "exec -o cat /home/irssi/art/pump/$* ; sleep 1";
+  drop = "exec -o cat -u /root/irssi/art/$*; sleep 1";
+  pump = "exec -o cat /root/irssi/art/pump/$* ; sleep 1";
   plop = "quote sapart $0 $1 Redirecting $0 to $2 ; quote sajoin $0 $2; sleep 1 ; /mode $2 -o $0";
   sajoin = "quote sajoin $*";
   g = "gay -1 -fig -box $*";

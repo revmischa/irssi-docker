@@ -11,5 +11,3 @@ cd irssi-${IRSSI_RELEASE}
 ./configure --enable-true-color && make -j7 && make install
 apt-get remove -y gcc build-essential
 apt-get autoremove -y
-useradd -m irssi
-

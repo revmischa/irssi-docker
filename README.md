@@ -29,7 +29,7 @@ This is a docker image, ready to run on any system, be it Mac, Windows or Linux.
 N.B. one could very easily script the creation of irssi images with your hosting provider of choice, giving you a fresh IRC client on a new IP address with a keyboard stroke, if one were so inclined. Never stay banned again!  
 
 # Where da ANSIs?
-ANSI and ASCII art is in the `/home/irssi/art/` directory. It's not very organized, sorry. This is a directory full of lots of random artwork created by chatters (not me) that has been collected over the years. Some of it is shockingly offensive and I don't recommend pasting them at random unless you like getting banned for life and shunned from your social circles IRL.  
+ANSI and ASCII art is in the `/root/irssi/art/` directory. It's not very organized, sorry. This is a directory full of lots of random artwork created by chatters (not me) that has been collected over the years. Some of it is shockingly offensive and I don't recommend pasting them at random unless you like getting banned for life and shunned from your social circles IRL.  
 You can "drop" an ANSI or ASCII file with the irssi alias `/drop foo.txt`  
 
 # Test drive
